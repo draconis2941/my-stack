@@ -1,5 +1,18 @@
 ssh_authorized_keys:
 - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJSGRPwaPVedvzUmZaV1M7JsShRaZfux3G3iZHeemk00 draconis2941@gmail.com
 - github:draconis2941
-
-hostname: stack1
+write_files:
+- encoding: ""
+  content: |-
+    #!/bin/bash
+    echo hi
+  owner: root
+  path: /etc/rc.local
+  permissions: '0755'
+hostname: stack1.myers.rocks
+run_cmd:
+- "echo hi && echo bye"
+boot_cmd:
+- "echo hi && echo bye"
+init_cmd:
+- "echo hi && echo bye"
